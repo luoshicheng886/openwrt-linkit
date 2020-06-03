@@ -154,7 +154,7 @@ $(eval $(call DefineBoostLibrary,random,system,))
 # We need a beter way to provide this package, information regarding the Python packages
 #  such as Python version and directories locations. 
 # Python 2.7 version is for now hard-coded. Python 3 is (until this date) broken in the trunk tree.
-$(eval $(call DefineBoostLibrary,python,,+PACKAGE_boost-python:python))
+$(eval $(call DefineBoostLibrary,python,,+python))
 $(eval $(call DefineBoostLibrary,regex,,))
 $(eval $(call DefineBoostLibrary,serialization,,))
 $(eval $(call DefineBoostLibrary,signals,,))
