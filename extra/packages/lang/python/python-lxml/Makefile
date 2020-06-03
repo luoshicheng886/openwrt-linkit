@@ -75,6 +75,11 @@ define PyBuild/Compile
 	)
 endef
 
+define Py3Package/python3-lxml/install
+	$(INSTALL_DIR) $(1)$(PYTHON_PKG_DIR)
+	$(CP) $(CONFIG_TOOLCHAIN_ROOT)/lib/librt.so.0 $(1)$(PYTHON_PKG_DIR)
+endef
+
 define Py3Build/Compile
 	$(call Build/Compile/Py3Mod,, \
 		install --prefix="/usr" --root="$(PKG_INSTALL_DIR)" \
