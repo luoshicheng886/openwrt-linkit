@@ -58,6 +58,11 @@ $(call Package/python-mysql/description)
 (Variant for Python3)
 endef
 
+define Py3Package/python3-mysql/install
+	$(INSTALL_DIR) $(1)$(PYTHON_PKG_DIR)
+	$(CP) $(STAGING_DIR)/usr/lib/mysql/libmysqlclient_r.so.16* $(1)$(PYTHON_PKG_DIR)
+endef
+
 $(eval $(call PyPackage,python-mysql))
 $(eval $(call BuildPackage,python-mysql))
 
